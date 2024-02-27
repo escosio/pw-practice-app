@@ -148,3 +148,10 @@ test('tooltips', async({page}) => {
 	const tooltip = await page.locator('nb-tooltip').textContent()
 	expect(tooltip).toEqual('This is a tooltip')
 })
+
+test('Dialog boxes', async({page}) => {
+	await page.getByText('Tables & Data').click()
+	await page.getByText('Smart Table').click()
+
+	await page.getByRole('table')
+})
